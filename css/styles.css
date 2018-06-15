@@ -87,13 +87,51 @@ body {
 .card {
 	width: 24%;
 	min-height: 75px;
+	justify-content: center;
 	background-color: #161616;
     border-radius: 8px;
     cursor: pointer;
 	margin: 0.5%;
+	background-size: 55px 55px;
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
 	transition: all 0.3s ease;
 }
 
+.sword {
+	background-image: url('../img/sword.svg');
+}
+
+.flail {
+	background-image: url('../img/flail.svg');
+	background-size: 50px 50px;
+}
+
+.shield {
+	background-image: url('../img/shield.svg');
+}
+
+.axe {
+	background-image: url('../img/axe.svg');
+}
+
+.hammer {
+	background-image: url('../img/hammer.svg');
+}
+
+.dagger {
+	background-image: url('../img/dagger.svg');
+	background-size: 45px 45px;
+}
+
+.bow {
+	background-image: url('../img/bow.svg');
+	background-size: 60px 60px;
+}
+
+.crossbow {
+	background-image: url('../img/crossbow.svg');
+}
 
 @media screen and (min-width: 380px) {
 	.game-board {
@@ -110,8 +148,19 @@ body {
 
 @media screen and (min-width: 480px) {
 	.card {
+		width: 23%;
 		min-height: 115px;
+		background-size: 70px 70px;
+		margin: 1%;
 		transition: all 0.3s ease;
+	}
+
+	.dagger {
+	background-size: 55px 55px;
+	}
+
+	.bow {
+		background-size: 85px 85px;
 	}
 }
 
@@ -123,13 +172,15 @@ body {
 	}
 
 	.game-board {
-		width: 620px;
+		width: 640px;
 		margin: 0%;
 		transition: all 0.3s ease;
 	}
 
 	.card {
-		min-height: 145px;
+		width: 22%;
+		margin: 1.5%;
+		min-height: 135px;
 		transition: all 0.3s ease;
 	}
 }

@@ -133,6 +133,29 @@ body {
 	background-image: url('../img/crossbow.svg');
 }
 
+.open {
+	transform: rotateY(0);
+	background-color: #02b3e4;
+	cursor: default;
+}
+
+.face-down {
+	background-image: url('');
+}
+
+.matched {
+	cursor: default;
+	background-color: #02ccba;
+}
+
+.unmatched {
+	background-color: #e2043b;
+}
+
+.disabled {
+	pointer-events: none;
+}
+
 @media screen and (min-width: 380px) {
 	.game-board {
 		margin-left: 3%;

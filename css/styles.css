@@ -17,6 +17,15 @@ body {
     height: 100%;
     margin: 0;
     padding: 0;
+    background-image: url('../img/Battlefield-Sarel-Theron.jpg'); 
+	background-size: cover;
+	background-position: 50% 0px;
+	background-repeat: no-repeat;
+}
+
+a {
+	color: white;
+	text-decoration: none;
 }
 
 .header-container {
@@ -54,11 +63,21 @@ body {
 	float: left;
 }
 
-.star {
+.star-unfill {
 	display: block;
 	height: 1.2em;
 	width: 1.2em;
 	background-image: url('../img/star-unfill.svg'); 
+	background-size: contain;
+	background-repeat: no-repeat;
+	padding-left: 1.5em;
+}
+
+.star-fill {
+	display: block;
+	height: 1.2em;
+	width: 1.2em;
+	background-image: url('../img/star-fill.svg'); 
 	background-size: contain;
 	background-repeat: no-repeat;
 	padding-left: 1.5em;
@@ -76,7 +95,7 @@ body {
 	width: 100%;
     background: linear-gradient(160deg, #6e6e6e 40%, #b63332 100%);
     border-radius: 10px;
-    box-shadow: 10px 12px 20px 0 rgba(46, 61, 73, 0.4);
+    box-shadow: 10px 10px 20px 0 rgba(0, 0, 0, 0.4);
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -155,6 +174,11 @@ body {
 
 .disabled {
 	pointer-events: none;
+}
+
+.credit {
+	color: white;
+	text-align: center;
 }
 
 @media screen and (min-width: 380px) {

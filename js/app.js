@@ -129,4 +129,5 @@ for (let i = 0; i < cards.length; i++) {
 
 restart.addEventListener('click', function() {
 	start();
+	openedCards = [];
 });

@@ -10,6 +10,8 @@ html {
 
 html,
 body {
+	font-family: 'Cinzel Decorative', cursive;
+	color: #ffce87;
     display: flex;
     vertical-align: top;
     flex-direction: column;
@@ -24,11 +26,18 @@ body {
 }
 
 a {
-	color: white;
-	text-decoration: none;
+	color: #ffce87;
+	text-decoration: underline;
+}
+
+h1 {
+	font-size: 1.5em;
+	letter-spacing: 0.07em;
+	transition: all 0.3s ease;
 }
 
 .header-container {
+	margin-top: 20px;
 	width: 100%;
     display: flex;
     justify-content: center;
@@ -89,6 +98,12 @@ a {
 	margin-right: 2em;
     float: right;
     cursor: pointer;
+    transition: all 0.3s ease;
+    opacity: 0.6;
+}
+
+#restart:hover {
+    opacity: 1;
 }
 
 .game-board {
@@ -115,6 +130,7 @@ a {
 	background-size: 55px 55px;
 	background-position: 50% 50%;
 	background-repeat: no-repeat;
+	box-shadow: 3px 3px 10px 0 rgba(0, 0, 0, 0.4);
 	transition: all 0.3s ease;
 }
 
@@ -155,21 +171,35 @@ a {
 
 .open {
 	transform: rotateY(0);
-	background-color: #02b3e4;
+	background-color: #268dc8;
 	cursor: default;
+	animation-name: faceUp;
+	-webkit-backface-visibility: visible !important;
+	backface-visibility: visible !important;
+	animation-duration: 0.60s;
 }
 
 .face-down {
 	background-image: url('');
+	animation-name: faceDown;
+	animation-duration: 0.50s;
 }
 
 .matched {
 	cursor: default;
-	background-color: #02ccba;
+	background-color: #1fbe6d;
+	animation-name: match;
+	-webkit-backface-visibility: visible !important;
+	backface-visibility: visible !important;
+	animation-duration: 0.75s;
 }
 
 .unmatched {
-	background-color: #e2043b;
+	background-color: #d30e21;
+	animation-name: unmatch;
+	-webkit-backface-visibility: visible !important;
+	backface-visibility: visible !important;
+	animation-duration: 0.75s;
 }
 
 .disabled {
@@ -177,8 +207,101 @@ a {
 }
 
 .credit {
+	font-family: none;
 	color: white;
 	text-align: center;
+}
+
+@keyframes faceUp {
+	from {
+		transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
+		animation-timing-function: ease-in;
+	}
+
+	40% {
+		transform: perspective(400px) rotate3d(0, 1, 0, -20deg);
+		animation-timing-function: ease-in;
+	}
+
+	60% {
+		transform: perspective(400px) rotate3d(0, 1, 0, 10deg);
+	}
+
+	80% {
+		transform: perspective(400px) rotate3d(0, 1, 0, -5deg);
+	}
+
+	to {
+		transform: perspective(400px);
+	}
+}
+
+@keyframes faceDown {
+	from {
+		transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
+		animation-timing-function: ease-in;
+	}
+
+	40% {
+		transform: perspective(400px) rotate3d(0, 1, 0, -20deg);
+		animation-timing-function: ease-in;
+	}
+
+	60% {
+		transform: perspective(400px) rotate3d(0, 1, 0, 10deg);
+	}
+
+	80% {
+		transform: perspective(400px) rotate3d(0, 1, 0, -5deg);
+	}
+
+	to {
+		transform: perspective(400px);
+	}
+}
+
+@keyframes match {
+	from {
+		transform: scale3d(1, 1, 1);
+	}
+
+	30% {
+		transform: scale3d(1.1, 0.9, 1);
+	}
+
+	40% {
+		transform: scale3d(0.9, 1.1, 1);
+	}
+
+	50% {
+		transform: scale3d(1.15, 0.9, 1);
+	}
+
+	65% {
+		transform: scale3d(.9, 1.1, 1);
+	}
+
+	75% {
+		transform: scale3d(1.1, .9, 1);
+	}
+
+	to {
+		transform: scale3d(1, 1, 1);
+	}
+}
+
+@keyframes unmatch {
+	from {
+		transform: scale3d(1, 1, 1);
+	}
+
+	50% {
+		transform: scale3d(1.1, 1.1, 1.1);
+	}
+
+	to {
+		transform: scale3d(1, 1, 1);
+	}
 }
 
 @media screen and (min-width: 380px) {
@@ -195,6 +318,14 @@ a {
 }
 
 @media screen and (min-width: 480px) {
+	h1 {
+		font-size: 2em;
+	}
+
+	.header-container {
+		margin-top: 35px;
+	}
+
 	.card {
 		width: 23%;
 		min-height: 115px;

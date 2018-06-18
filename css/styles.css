@@ -81,6 +81,7 @@ body {
     flex-wrap: wrap;
     justify-content: center;
     padding: 1%;
+    list-style: none;
     transition: all 0.3s ease;
 }
 

@@ -3,17 +3,25 @@ let cards = [...card];
 
 const deck = document.getElementById('deck');
 
-const rating = document.getElementById('rating');
 let starList = document.querySelectorAll('.stars li');
+let rating = document.querySelectorAll('.rating li');
 
 let moves = 0;
 let counter = document.querySelector('.moves');
 
+let second = 0, minute = 0; hour = 0;
+let interval;
+let mins = document.querySelector('.minutes');
+let secs = document.querySelector('.seconds');
+
 const restart = document.getElementById('restart');
+const playAgain = document.querySelector('.play-again');
 
 let matchedCard = document.getElementsByClassName('matched');
 
 let openedCards = [];
+
+const popup = document.getElementById('end');
 
 function shuffle(array) {
 	let indexNumber = array.length, tempNumber, randomNumber;
@@ -49,7 +57,16 @@ function start() {
     for (var i= 0; i < starList.length; i++) {
         starList[i].classList.add('star-fill');
         starList[i].classList.remove('star-unfill');
+        rating[i].classList.add('star-fill');
+        rating[i].classList.remove('star-unfill');
     };
+
+	second = 0;
+    minute = 0; 
+    hour = 0;
+    mins.innerHTML = 0;
+    secs.innerHTML = 0;
+    clearInterval(interval);
 };
 
 const displayCard = function() {
@@ -112,22 +129,64 @@ function enable() {
 function moveCounter() {
 	moves++;
 	counter.innerHTML = moves;
-	if (moves > 8 && moves < 12) {
+    if(moves == 1) {
+        second = 0;
+        minute = 0; 
+        hour = 0;
+        startTimer();
+    }
+	if (moves > 12 && moves < 14) {
 		starList[2].classList.remove('star-fill');
 		starList[2].classList.add('star-unfill');
-	} else if (moves > 13) {
+		rating[2].classList.remove('star-fill');
+		rating[2].classList.add('star-unfill');
+	} else if (moves > 15) {
 		starList[1].classList.remove('star-fill');
 		starList[1].classList.add('star-unfill');
+		rating[1].classList.remove('star-fill');
+		rating[1].classList.add('star-unfill');
 	};
+};
+
+function startTimer() {
+	interval = setInterval(function() {
+		mins.innerHTML = minute;
+		secs.innerHTML = second;
+		second++;
+		if (second == 60) {
+			minute++;
+			second = 0;
+		};
+		if (minute == 60) {
+			hour++;
+			minute = 0;
+		};
+	}, 1000);
+};
+
+function end() {
+	if (matchedCard.length == 16) {
+		clearInterval(interval);
+		popup.style.cssText = 'visibility: visible; opacity: 1';
+		document.getElementById('total-moves').innerHTML = moves;
+		document.getElementById('total-time').innerHTML = minute+' mins '+second+' secs';
+	}
 };
 
 for (let i = 0; i < cards.length; i++) {
 	card = cards[i];
 	card.addEventListener('click', displayCard);
 	card.addEventListener('click', cardOpen);
+	card.addEventListener('click', end);
 };
 
 restart.addEventListener('click', function() {
+	start();
+	openedCards = [];
+});
+
+playAgain.addEventListener('click', function() {
+	popup.style.cssText = 'visibility: hidden; opacity: 0';
 	start();
 	openedCards = [];
 });

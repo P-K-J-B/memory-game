@@ -30,8 +30,22 @@ a {
 	text-decoration: underline;
 }
 
+p {
+	margin: 0;
+	font-size: 0.8em;
+	transition: all 0.3s ease;
+}
+
 h1 {
 	font-size: 1.5em;
+	letter-spacing: 0.07em;
+	transition: all 0.3s ease;
+}
+
+h2 {
+	margin: 0;
+	padding-top: 5.7em;
+	font-size: 1.3em;
 	letter-spacing: 0.07em;
 	transition: all 0.3s ease;
 }
@@ -53,49 +67,66 @@ h1 {
 }
 
 .score-panel {
+	display: inline-block;
+	font-size: 0.9em;
     text-align: left;
     width: 100%;
-    margin-bottom: 10px;
+    margin-bottom: 0.5em;
+    line-height: 2em;
 }
 
 .stars {
-    margin: 0;
     padding: 0;
     margin: 0 5px 0 0;
-	display: inline-block;
 	list-style: none;
-	margin-left: 1.5em;
+	margin-left: 1em;
 }
 
 .stars li {
-	display: inline;
+	display: inline-block;
 	float: left;
 }
 
 .star-unfill {
-	display: block;
+	display: inline-block;
 	height: 1.2em;
 	width: 1.2em;
 	background-image: url('../img/star-unfill.svg'); 
 	background-size: contain;
 	background-repeat: no-repeat;
 	padding-left: 1.5em;
+	transition: all 0.3s ease;
 }
 
 .star-fill {
-	display: block;
+	display: inline-block;
 	height: 1.2em;
 	width: 1.2em;
 	background-image: url('../img/star-fill.svg'); 
 	background-size: contain;
 	background-repeat: no-repeat;
 	padding-left: 1.5em;
+	transition: all 0.3s ease;
+}
+
+.moves {
+	margin-left: 0.5em;
+}
+
+.timer {
+	display: inline-block;
+	float: right;
 }
 
 #restart {
-	height: 1.2em;
-	width: 1.2em;
-	margin-right: 2em;
+	display: inline-block;
+	height: 1.5em;
+	width: 1.5em;
+	background-image: url('../img/restart.svg'); 
+	background-size: contain;
+	background-repeat: no-repeat;
+	margin-left: 1em;
+	margin-right: 1em;
     float: right;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -107,6 +138,7 @@ h1 {
 }
 
 .game-board {
+	margin: 0;
 	width: 100%;
     background: linear-gradient(160deg, #6e6e6e 40%, #b63332 100%);
     border-radius: 10px;
@@ -210,6 +242,69 @@ h1 {
 	font-family: none;
 	color: white;
 	text-align: center;
+	padding-top: 0.8em;
+}
+
+#end {
+	visibility: hidden;
+	opacity: 0;	
+}
+
+.overlay {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: rgba(0, 0, 0, 0.6);
+	transition: all 0.3s ease;
+}
+
+.popup {
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+	margin-top: 4rem;
+	width: 100%;
+	height: 400px;
+	padding: 20px;
+	text-align: center;
+	line-height: 1.7em;
+	background-image: url('../img/popup-bkg.png');
+	background-size: 450px;
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+	transition: all 0.3s ease;
+}
+
+.rating {
+	margin: 0 0 0 0;
+	padding: 0;
+}
+
+.rating .star-unfill {
+	height: 1.2em;
+	width: 1.2em;
+	margin-left: 0.1em;
+	margin-right: 0.1em;
+	transition: all 0.3s ease;
+}
+
+.rating .star-fill {
+	height: 1.2em;
+	width: 1.2em;
+	margin-left: 0.1em;
+	margin-right: 0.1em;
+	transition: all 0.3s ease;
+}
+
+.play-again {
+	cursor: pointer;
+	transition: all 0.3s ease;
+}
+
+.play-again:hover {
+	color: white;
 }
 
 @keyframes faceUp {
@@ -322,6 +417,15 @@ h1 {
 		font-size: 2em;
 	}
 
+	h2 {
+		font-size: 1.5em;
+		padding-top: 4.2em;
+	}
+
+	p {
+		font-size: 1em;
+	}
+
 	.header-container {
 		margin-top: 35px;
 	}
@@ -335,13 +439,46 @@ h1 {
 	}
 
 	.dagger {
-	background-size: 55px 55px;
+		background-size: 55px 55px;
 	}
 
 	.bow {
 		background-size: 85px 85px;
 	}
-}
+
+	.popup {
+		margin-top: 11rem;
+		background-size: 600px;
+		line-height: 2em;
+	}
+
+	.star-unfill {
+		height: 1.5em;
+		width: 1.5em;
+		margin-left: 0.1em;
+		margin-right: 0.1em;
+	}
+
+	.star-fill {
+		height: 1.5em;
+		width: 1.5em;
+		margin-left: 0.1em;
+		margin-right: 0.1em;
+	}
+
+	.rating .star-unfill {
+		height: 1.7em;
+		width: 1.7em;
+		margin-left: 0.3em;
+		margin-right: 0.3em;
+	}
+
+	.rating .star-fill {
+		height: 1.7em;
+		width: 1.7em;
+		margin-left: 0.3em;
+		margin-right: 0.3em;
+	}
 
 @media screen and (min-width: 620px) {
 	.header-container {
@@ -361,5 +498,10 @@ h1 {
 		margin: 1.5%;
 		min-height: 135px;
 		transition: all 0.3s ease;
+	}
+
+	.popup {
+		margin-top: 14rem;
+		background-size: 750px;
 	}
 }

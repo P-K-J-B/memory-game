@@ -17,7 +17,7 @@ let interval;
 let mins = document.querySelector('.minutes');
 let secs = document.querySelector('.seconds');
 
-const restart = document.getElementById('restart');
+const restart = document.querySelector('.restart');
 const playAgain = document.querySelector('.play-again');
 
 let matchedCard = document.getElementsByClassName('matched');

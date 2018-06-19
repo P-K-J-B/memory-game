@@ -2,12 +2,6 @@ html {
     box-sizing: border-box;
 }
 
-*,
-*::before,
-*::after {
-    box-sizing: inherit;
-}
-
 html,
 body {
 	font-family: 'Cinzel Decorative', cursive;
@@ -21,7 +15,7 @@ body {
     padding: 0;
     background-image: url('../img/Battlefield-Sarel-Theron.jpg'); 
 	background-size: cover;
-	background-position: 50% 0px;
+	background-position: 50%;
 	background-repeat: no-repeat;
 }
 
@@ -44,7 +38,7 @@ h1 {
 
 h2 {
 	margin: 0;
-	padding-top: 5.7em;
+	padding-top: 6.7em;
 	font-size: 1.3em;
 	letter-spacing: 0.07em;
 	transition: all 0.3s ease;
@@ -87,7 +81,6 @@ TITLE & SCORE PANEL
 
 .stars {
     padding: 0;
-    margin: 0 5px 0 0;
 	list-style: none;
 	margin-left: 0.5em;
 	transition: all 0.3s ease;
@@ -105,7 +98,7 @@ TITLE & SCORE PANEL
 	background-image: url('../img/star-unfill.svg'); 
 	background-size: contain;
 	background-repeat: no-repeat;
-	padding-left: 1.5em;
+	padding-left: 0.3em;
 	transition: all 0.3s ease;
 }
 
@@ -116,7 +109,7 @@ TITLE & SCORE PANEL
 	background-image: url('../img/star-fill.svg'); 
 	background-size: contain;
 	background-repeat: no-repeat;
-	padding-left: 1.5em;
+	padding-left: 0.3em;
 	transition: all 0.3s ease;
 }
 
@@ -129,7 +122,7 @@ TITLE & SCORE PANEL
 	float: right;
 }
 
-#restart {
+.restart {
 	display: inline-block;
 	height: 1.5em;
 	width: 1.5em;
@@ -144,7 +137,7 @@ TITLE & SCORE PANEL
     opacity: 0.6;
 }
 
-#restart:hover {
+.restart:hover {
     opacity: 1;
 }
 
@@ -236,8 +229,7 @@ MATCHED & UNMATCHED CARD STYLES
 	background-color: #268dc8;
 	cursor: default;
 	animation-name: faceUp;
-	-webkit-backface-visibility: visible !important;
-	backface-visibility: visible !important;
+	backface-visibility: visible;
 	animation-duration: 0.60s;
 }
 
@@ -251,16 +243,14 @@ MATCHED & UNMATCHED CARD STYLES
 	cursor: default;
 	background-color: #1fbe6d;
 	animation-name: match;
-	-webkit-backface-visibility: visible !important;
-	backface-visibility: visible !important;
+	backface-visibility: visible;
 	animation-duration: 0.75s;
 }
 
 .unmatched {
 	background-color: #d30e21;
 	animation-name: unmatch;
-	-webkit-backface-visibility: visible !important;
-	backface-visibility: visible !important;
+	backface-visibility: visible;
 	animation-duration: 0.75s;
 }
 
@@ -296,7 +286,6 @@ ENDGAME OVERLAY
 	margin-top: 4rem;
 	width: 100%;
 	height: 400px;
-	padding: 20px;
 	text-align: center;
 	line-height: 1.7em;
 	background-image: url('../img/popup-bkg.png');
@@ -314,16 +303,12 @@ ENDGAME OVERLAY
 .rating .star-unfill {
 	height: 1.2em;
 	width: 1.2em;
-	margin-left: 0.1em;
-	margin-right: 0.1em;
 	transition: all 0.3s ease;
 }
 
 .rating .star-fill {
 	height: 1.2em;
 	width: 1.2em;
-	margin-left: 0.1em;
-	margin-right: 0.1em;
 	transition: all 0.3s ease;
 }
 
@@ -456,8 +441,8 @@ RESPONSIVE STYLING
 		margin-left: 0.5em;
 	}
 
-	#restart {
-		margin-left: 1em;
+	.restart {
+		margin-left: 0.7em;
 		margin-right: 2em;
 	}
 
@@ -473,7 +458,7 @@ RESPONSIVE STYLING
 
 	h2 {
 		font-size: 1.5em;
-		padding-top: 4.2em;
+		padding-top: 5em;
 	}
 
 	p {
@@ -527,16 +512,13 @@ RESPONSIVE STYLING
 	.rating .star-unfill {
 		height: 1.7em;
 		width: 1.7em;
-		margin-left: 0.3em;
-		margin-right: 0.3em;
 	}
 
 	.rating .star-fill {
 		height: 1.7em;
 		width: 1.7em;
-		margin-left: 0.3em;
-		margin-right: 0.3em;
 	}
+}
 
 @media screen and (min-width: 620px) {
 	.header-container {
@@ -547,7 +529,7 @@ RESPONSIVE STYLING
 
 	.game-board {
 		width: 640px;
-		margin: 0%;
+		margin: 0;
 		transition: all 0.3s ease;
 	}
 
@@ -561,5 +543,13 @@ RESPONSIVE STYLING
 	.popup {
 		margin-top: 14rem;
 		background-size: 750px;
+	}
+
+	.restart {
+		margin-right: 1em;
+	}
+
+	.stars {
+		margin-left: 1em;
 	}
 }

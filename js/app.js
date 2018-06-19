@@ -1,5 +1,5 @@
 let card = document.getElementsByClassName("card");
-let cards = [...card];
+let cards = [].slice.call(document.querySelectorAll('.card'));
 
 const deck = document.getElementById('deck');
 
@@ -80,7 +80,7 @@ function cardOpen() {
 	var length = openedCards.length;
 	if(length === 2){
 		moveCounter();
-		if(openedCards[0].type === openedCards[1].type){
+		if(openedCards[0].classList[1] === openedCards[1].classList[1]){
 			matched();
 		} else {
 			unmatched();

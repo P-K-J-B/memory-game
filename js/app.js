@@ -1,3 +1,6 @@
+// ___________________________________________________
+// VARIABLES
+
 let card = document.getElementsByClassName("card");
 let cards = [].slice.call(document.querySelectorAll('.card'));
 
@@ -23,6 +26,9 @@ let openedCards = [];
 
 const popup = document.getElementById('end');
 
+// ___________________________________________________
+// SHUFFLING CARDS
+
 function shuffle(array) {
 	let indexNumber = array.length, tempNumber, randomNumber;
 	
@@ -36,6 +42,9 @@ function shuffle(array) {
 
 	return array;
 };
+
+// ___________________________________________________
+// SET/RESET GAME BOARD ON START UP
 
 document.body.onload = start();
 
@@ -74,6 +83,9 @@ const displayCard = function() {
 	this.classList.toggle('open');
 	this.classList.toggle('disabled');
 };
+
+// ___________________________________________________
+// MATCHING & UNMATCHING CARDS
 
 function cardOpen() {
 	openedCards.push(this);
@@ -126,6 +138,9 @@ function enable() {
    	});
 };
 
+// ___________________________________________________
+// MOVE COUNTER, TIMER & STAR RATING
+
 function moveCounter() {
 	moves++;
 	counter.innerHTML = moves;
@@ -164,6 +179,9 @@ function startTimer() {
 	}, 1000);
 };
 
+// ___________________________________________________
+// SHOW ENDGAME OVERLAY
+
 function end() {
 	if (matchedCard.length == 16) {
 		clearInterval(interval);
@@ -172,6 +190,9 @@ function end() {
 		document.getElementById('total-time').innerHTML = minute+' mins '+second+' secs';
 	}
 };
+
+// ___________________________________________________
+// EVENT LISTENERS
 
 for (let i = 0; i < cards.length; i++) {
 	card = cards[i];

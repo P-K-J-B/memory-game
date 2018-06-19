@@ -50,6 +50,12 @@ h2 {
 	transition: all 0.3s ease;
 }
 
+/*
+___________________________________________________
+TITLE & SCORE PANEL
+
+*/
+
 .header-container {
 	margin-top: 20px;
 	width: 100%;
@@ -73,6 +79,10 @@ h2 {
     width: 100%;
     line-height: 2em;
     transition: all 0.3s ease;
+}
+
+.score-panel header {
+	text-align: center;
 }
 
 .stars {
@@ -138,6 +148,12 @@ h2 {
     opacity: 1;
 }
 
+/*
+___________________________________________________
+GAME BOARD & CARD TYPES
+
+*/
+
 .game-board {
 	margin: 0;
 	width: 100%;
@@ -150,6 +166,13 @@ h2 {
     padding: 1%;
     list-style: none;
     transition: all 0.3s ease;
+}
+
+.credit {
+	font-family: none;
+	color: white;
+	text-align: center;
+	padding-top: 0.8em;
 }
 
 .card {
@@ -202,6 +225,12 @@ h2 {
 	background-image: url('../img/crossbow.svg');
 }
 
+/*
+___________________________________________________
+MATCHED & UNMATCHED CARD STYLES
+
+*/
+
 .open {
 	transform: rotateY(0);
 	background-color: #268dc8;
@@ -239,12 +268,11 @@ h2 {
 	pointer-events: none;
 }
 
-.credit {
-	font-family: none;
-	color: white;
-	text-align: center;
-	padding-top: 0.8em;
-}
+/*
+___________________________________________________
+ENDGAME OVERLAY
+
+*/
 
 #end {
 	visibility: hidden;
@@ -307,6 +335,12 @@ h2 {
 .play-again:hover {
 	color: white;
 }
+
+/*
+___________________________________________________
+CARD ANIMATIONS
+
+*/
 
 @keyframes faceUp {
 	from {
@@ -399,6 +433,12 @@ h2 {
 		transform: scale3d(1, 1, 1);
 	}
 }
+
+/*
+___________________________________________________
+RESPONSIVE STYLING
+
+*/
 
 @media screen and (min-width: 380px) {
 	.game-board {

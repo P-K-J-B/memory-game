@@ -1,0 +1,211 @@
+/*
+___________________________________________________
+RESPONSIVE STYLING FOR PHONE & DESKTOP
+
+*/
+
+@media screen and (min-height: 481px) {
+
+	.game-board-container {
+		width: 100%;
+		height: auto;
+	}
+
+	.header-container {
+		width: 100%;
+		height: 100px;
+	}
+
+	.score-panel {
+		margin-bottom: 0%;
+	}
+
+	.card {
+		min-height: 75px;
+	}
+
+	.credit {
+		width: 100%;
+		position: relative;
+		right: 0;
+		bottom: 0;
+	}
+
+	@media screen and (min-width: 380px) {
+
+		.game-board {
+			margin-left: 3%;
+			margin-right: 3%;
+			transition: all 0.3s ease;
+		}
+
+		.card {
+			min-height: 90px;
+			transition: all 0.3s ease;
+		}
+
+		.moves {
+			margin-left: 0.5em;
+		}
+
+		.restart {
+			margin-left: 0.7em;
+			margin-right: 2em;
+		}
+
+		.stars {
+			margin-left: 2em;
+		}
+	}
+
+	@media screen and (min-width: 480px) {
+
+		h2 {
+			font-size: 1.5em;
+			padding-top: 5em;
+		}
+
+		p {
+			font-size: 1em;
+		}
+
+		.header-container {
+			margin-top: 35px;
+		}
+
+		.title {
+			font-size: 1.5em;
+		}
+
+		.score-panel {
+			margin-bottom: 0.5em
+		}
+
+		.card {
+			width: 23%;
+			min-height: 115px;
+			background-size: 70px 70px;
+			margin: 1%;
+			transition: all 0.3s ease;
+		}
+
+		.dagger {
+			background-size: 55px 55px;
+		}
+
+		.bow {
+			background-size: 85px 85px;
+		}
+
+		.popup {
+			margin-top: 11rem;
+			background-size: 600px;
+			line-height: 2em;
+		}
+
+		.star-unfill {
+			height: 1.5em;
+			width: 1.5em;
+			margin-left: 0.1em;
+			margin-right: 0.1em;
+		}
+
+		.star-fill {
+			height: 1.5em;
+			width: 1.5em;
+			margin-left: 0.1em;
+			margin-right: 0.1em;
+		}
+
+		.rating .star-unfill {
+			height: 1.7em;
+			width: 1.7em;
+		}
+
+		.rating .star-fill {
+			height: 1.7em;
+			width: 1.7em;
+		}
+	}
+
+	@media screen and (min-width: 620px) {
+		.header-container {
+			width: 620px;
+			margin-right: auto;
+			margin-left: auto;
+		}
+
+		.game-board {
+			width: 640px;
+			margin: 0;
+			transition: all 0.3s ease;
+		}
+
+		.card {
+			width: 22%;
+			margin: 1.5%;
+			min-height: 135px;
+			transition: all 0.3s ease;
+		}
+
+		.popup {
+			margin-top: 14rem;
+			background-size: 750px;
+		}
+
+		.restart {
+			margin-right: 1em;
+		}
+
+		.stars {
+			margin-left: 1em;
+		}
+	}
+
+/*
+___________________________________________________
+LANDSCAPE TABLET FIX
+
+*/
+
+	@media screen and (min-height: 481px) and (min-width: 481px) and (max-height: 854px) {
+
+		body {
+			flex-direction: row;
+		}
+		
+		.title {
+			font-size: 1em;
+		}
+
+		.header-container {
+			margin-top: 0px;
+			width: 450px;
+		}
+
+		.game-board {
+			width: 450px;
+			height: 450px;
+		}
+
+		.card {
+			min-height: 75px;
+		}
+
+		.credit {
+			padding-top: 0em;
+		}
+
+		@media screen and (min-height: 690px) {
+
+			.game-board {
+				width: 550px;
+				height: 550px;
+			}
+
+			.card {
+				min-height: 90px;
+			}
+		}
+	}
+}
